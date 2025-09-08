@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/layout/Header/Header'
 import Footer from './components/layout/Footer/Footer'
 import Home from './pages/Home'
-import AboutUs from './pages/AboutUs'
+import WhoWeAre from './pages/WhoWeAre'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/who-we-are" element={<WhoWeAre />} />
         </Routes>
         <Footer />
       </div>
