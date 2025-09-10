@@ -1,267 +1,272 @@
+
 import React from 'react';
-import { Beaker, Microscope, FileText, Users, TrendingUp, Shield, Globe, ArrowRight, CheckCircle, Brain, Lightbulb } from 'lucide-react';
+import { 
+  Microscope, Building2, TrendingUp, ShieldCheck, 
+  FileText, Handshake, Lightbulb, Dna, TestTube,
+  Clock, Scale, DollarSign, Shield, Rocket, 
+  LineChart, Briefcase, ArrowRight,
+  ChevronRight, Target,
+} from 'lucide-react';
 
-export const Content: React.FC = () => {
+const Flask = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 2v6l-2 2v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-8l-2-2V2"/>
+    <path d="M9 2h6"/>
+    <path d="M12 8v4"/>
+    <circle cx="12" cy="16" r="1"/>
+  </svg>
+);
+
+const Bacterium = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="3"/>
+    <circle cx="6" cy="6" r="2"/>
+    <circle cx="18" cy="6" r="2"/>
+    <circle cx="6" cy="18" r="2"/>
+    <circle cx="18" cy="18" r="2"/>
+    <path d="M12 9v6"/>
+    <path d="M9 12h6"/>
+    <path d="M6 6l6 6"/>
+    <path d="M18 6l-6 6"/>
+    <path d="M6 18l6-6"/>
+    <path d="M18 18l-6-6"/>
+  </svg>
+);
+
+const Content: React.FC = () => {
   return (
-    <div id="content">
-      {/* Value Proposition Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50" id="content">
+      {/* Hero Section with Value Proposition */}
+      <section className="relative bg-gradient-to-br from-[#0F4C5C] via-[#1A5E70] to-[#0F4C5C] py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#0F4C5C] mb-6">
-              Accelerate Your Biologics Journey
-            </h2>
-            <p className="text-xl text-[#36454F] max-w-3xl mx-auto leading-relaxed">
-              BCM Solutions delivers expert CMC consulting to guide biotech companies from discovery through commercialization. 
-              We transform complex challenges into strategic opportunities, ensuring regulatory success and operational excellence.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center">
-              <div className="bg-[#0F4C5C] text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Globe className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0F4C5C] mb-3">14+ Years Experience</h3>
-              <p className="text-[#36454F]">Deep expertise across all phases of biologics development and manufacturing</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-[#0F4C5C] text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Brain className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0F4C5C] mb-3">Strategic Innovation</h3>
-              <p className="text-[#36454F]">Cutting-edge approaches including AI-powered IND writing and process optimization</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-[#0F4C5C] text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                <Lightbulb className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0F4C5C] mb-3">Proven Results</h3>
-              <p className="text-[#36454F]">Successfully guided dozens of clients through regulatory approvals and tech transfers</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Differentiators */}
-      <section className="py-16 bg-gradient-to-br from-[#F0F7F8] to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-[#0F4C5C] mb-6">
-                Why Choose BCM Solutions?
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-[#0F4C5C] mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-[#0F4C5C] mb-1">End-to-End CMC Expertise</h4>
-                    <p className="text-[#36454F]">From cell line development to commercial manufacturing, we cover every aspect of your CMC journey</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-[#0F4C5C] mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-[#0F4C5C] mb-1">Regulatory Excellence</h4>
-                    <p className="text-[#36454F]">Navigate complex global regulatory landscapes with confidence and strategic foresight</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-[#0F4C5C] mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-[#0F4C5C] mb-1">CDMO Partnership Optimization</h4>
-                    <p className="text-[#36454F]">Expert contract negotiation and vendor management to maximize value and minimize risk</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-[#0F4C5C] mt-1 mr-3 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-[#0F4C5C] mb-1">Investment Due Diligence</h4>
-                    <p className="text-[#36454F]">Comprehensive technical assessments to inform critical business decisions</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-semibold text-[#0F4C5C] mb-4">Current Client Engagements</h3>
-              <p className="text-[#36454F] mb-6">
-                Leading strategic initiatives with nearly a dozen innovative biotech companies, including:
-              </p>
-              <ul className="space-y-3 text-[#36454F]">
-                <li className="flex items-center">
-                  <ArrowRight className="w-4 h-4 text-[#0F4C5C] mr-2" />
-                  Monoclonal antibody development programs
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="w-4 h-4 text-[#0F4C5C] mr-2" />
-                  Exosome therapy platforms
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="w-4 h-4 text-[#0F4C5C] mr-2" />
-                  Novel protein therapeutics
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="w-4 h-4 text-[#0F4C5C] mr-2" />
-                  AI-powered IND development
-                </li>
-                <li className="flex items-center">
-                  <ArrowRight className="w-4 h-4 text-[#0F4C5C] mr-2" />
-                  Market expansion strategies
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section - Keeping existing */}
-      <section className="py-16 bg-[#F0F7F8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-semibold text-[#0F4C5C] mb-4">
-              Comprehensive CMC Services
-            </h2>
-            <p className="text-xl text-[#36454F] max-w-3xl mx-auto">
-              From early-stage development to commercial manufacturing, we provide strategic guidance 
-              across the entire biologics development lifecycle.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="bg-[#0F4C5C] text-white p-3 rounded-lg w-12 h-12 mb-4 flex items-center justify-center">
-                <Beaker className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0F4C5C] mb-3">
-                Process Development
-              </h3>
-              <p className="text-[#36454F] leading-relaxed">
-                Cell line development, cell culture optimization, purification strategies, and scale-up 
-                processes for biologics manufacturing.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="bg-[#0F4C5C] text-white p-3 rounded-lg w-12 h-12 mb-4 flex items-center justify-center">
-                <FileText className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0F4C5C] mb-3">
-                CMC Regulatory Strategy
-              </h3>
-              <p className="text-[#36454F] leading-relaxed">
-                Regulatory strategy development, IND writing, CMC documentation, and global regulatory 
-                compliance guidance.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="bg-[#0F4C5C] text-white p-3 rounded-lg w-12 h-12 mb-4 flex items-center justify-center">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0F4C5C] mb-3">
-                CDMO Management
-              </h3>
-              <p className="text-[#36454F] leading-relaxed">
-                Contract negotiation, vendor selection, technical oversight, and quality assurance 
-                for contract manufacturing partnerships.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="bg-[#0F4C5C] text-white p-3 rounded-lg w-12 h-12 mb-4 flex items-center justify-center">
-                <TrendingUp className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0F4C5C] mb-3">
-                Tech Transfer
-              </h3>
-              <p className="text-[#36454F] leading-relaxed">
-                Microbial and mammalian CMC technology transfer, process validation, and manufacturing 
-                site qualification.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="bg-[#0F4C5C] text-white p-3 rounded-lg w-12 h-12 mb-4 flex items-center justify-center">
-                <Microscope className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0F4C5C] mb-3">
-                Characterization & Validation
-              </h3>
-              <p className="text-[#36454F] leading-relaxed">
-                Analytical method development, product characterization, validation protocols, and 
-                quality control strategy.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-              <div className="bg-[#0F4C5C] text-white p-3 rounded-lg w-12 h-12 mb-4 flex items-center justify-center">
-                <Shield className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#0F4C5C] mb-3">
-                Risk Assessment
-              </h3>
-              <p className="text-[#36454F] leading-relaxed">
-                Technical risk evaluation, mitigation strategies, and contingency planning for 
-                biologics development programs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Client Success Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-semibold text-[#0F4C5C] mb-4">
-              Delivering Impact
-            </h2>
-            <p className="text-xl text-[#36454F] max-w-3xl mx-auto">
-              Our expertise translates into tangible results for our clients
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Accelerate Your Biologics<br />Development Journey
+            </h1>
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+              With over 14 years of industry experience and a proven track record from early R&D through 
+              commercial manufacturing, BCM Solutions delivers the strategic CMC expertise your biotech needs to succeed.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-[#0F4C5C] mb-2">12+</div>
-              <p className="text-[#36454F]">Active Client Engagements</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-[#0F4C5C] mb-2">14+</div>
-              <p className="text-[#36454F]">Years of Industry Experience</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-[#0F4C5C] mb-2">100%</div>
-              <p className="text-[#36454F]">Regulatory Success Rate</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-[#0F4C5C] mb-2">3</div>
-              <p className="text-[#36454F]">Therapeutic Modalities</p>
-            </div>
+          {/* Key Metrics */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { icon: Microscope, number: "14+", label: "Years CMC Experience" },
+              { icon: Building2, number: "12+", label: "Biotech Clients Served" },
+              { icon: TrendingUp, number: "$10M+", label: "Annual Budgets Managed" },
+              { icon: ShieldCheck, number: "100%", label: "IND Success Rate" }
+            ].map((stat, idx) => (
+              <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/15">
+                <stat.icon className="w-8 h-8 text-white/80 mb-3" />
+                <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
+                <div className="text-sm text-gray-200">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Comprehensive Solutions</p>
+            <h2 className="text-4xl font-bold text-[#0F4C5C] mb-4">End-to-End CMC Services</h2>
+            <p className="text-xl text-[#36454F] max-w-3xl mx-auto">
+              From early-stage development to commercial manufacturing, we provide the technical leadership 
+              and strategic direction needed at every phase of your biologics journey.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Target,
+                title: "CMC Strategy & Planning",
+                description: "Develop comprehensive CMC roadmaps aligned with your clinical timelines and regulatory milestones. Expert guidance on cell line development, process optimization, and scale-up strategies."
+              },
+              {
+                icon: FileText,
+                title: "Regulatory Excellence",
+                description: "Navigate complex regulatory landscapes with confidence. IND/BLA writing, FDA meeting preparation, and global regulatory strategy for biologics and novel therapeutic modalities."
+              },
+              {
+                icon: Handshake,
+                title: "CDMO Management",
+                description: "Expert contract negotiation and CDMO oversight. Tech transfer leadership for both microbial and mammalian systems, ensuring seamless transitions and timeline adherence."
+              },
+              {
+                icon: Flask,
+                title: "Process Development",
+                description: "Optimize your biologics manufacturing from cell culture through purification. Analytical method development, characterization, and validation for monoclonal antibodies and novel proteins."
+              },
+              {
+                icon: TrendingUp,
+                title: "Business Development",
+                description: "Strategic partnerships, market analysis, and go-to-market strategies. Leverage our extensive network and deep understanding of the biotech ecosystem to accelerate growth."
+              },
+              {
+                icon: Lightbulb,
+                title: "Due Diligence",
+                description: "Investment and acquisition due diligence with deep technical assessment. Evaluate CMC risks, opportunities, and development timelines for informed decision-making."
+              }
+            ].map((service, idx) => (
+              <div key={idx} className="group bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="bg-[#F0F7F8] rounded-full w-14 h-14 flex items-center justify-center mb-6 group-hover:bg-[#0F4C5C] transition-colors">
+                  <service.icon className="w-7 h-7 text-[#0F4C5C] group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="text-xl font-bold text-[#0F4C5C] mb-3">{service.title}</h3>
+                <p className="text-[#36454F] leading-relaxed">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Section */}
+      <section className="py-20 bg-gradient-to-br from-[#F0F7F8] to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Therapeutic Expertise</p>
+            <h2 className="text-4xl font-bold text-[#0F4C5C]">Specialized in Complex Biologics</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Dna, title: "Monoclonal Antibodies", desc: "Including bispecific T-cell engagers and novel formats" },
+              { icon: TestTube, title: "Cell & Gene Therapies", desc: "Exosomes and advanced therapeutic modalities" },
+              { icon: Flask, title: "Protein Therapeutics", desc: "Fusion proteins, peptides, and engineered biologics" },
+              { icon: Bacterium, title: "Microbial & Mammalian", desc: "Platform processes for both expression systems" }
+            ].map((area, idx) => (
+              <div key={idx} className="text-center group cursor-pointer">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:rotate-6 transition-transform">
+                    <area.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#0F4C5C] mb-2">{area.title}</h3>
+                  <p className="text-sm text-[#36454F]">{area.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Track Record Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Proven Results</p>
+            <h2 className="text-4xl font-bold text-[#0F4C5C]">Success Stories That Matter</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: Clock,
+                title: "12-Month IND Timeline",
+                description: "Accelerated monoclonal antibody development from cell line to IND filing using innovative transposon-based strategies"
+              },
+              {
+                icon: Scale,
+                title: "10X Scale-Up Success",
+                description: "Successfully scaled biologics manufacturing from 100L to 1,000L while maintaining product quality and reducing COGS"
+              },
+              {
+                icon: DollarSign,
+                title: "$15M+ Revenue Impact",
+                description: "Strategic marketing initiatives driving adoption of novel modalities and process intensification technologies"
+              },
+              {
+                icon: Shield,
+                title: "FDA Success",
+                description: "Successfully addressed FDA concerns on process and analytical methods, preparing multiple programs for Phase 3 studies"
+              }
+            ].map((achievement, idx) => (
+              <div key={idx} className="flex items-start space-x-4 bg-gray-50 rounded-xl p-6 hover:bg-[#F0F7F8] transition-colors">
+                <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-lg p-3 flex-shrink-0">
+                  <achievement.icon className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#0F4C5C] mb-2">{achievement.title}</h3>
+                  <p className="text-[#36454F] leading-relaxed">{achievement.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client Focus Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Who We Serve</p>
+            <h2 className="text-4xl font-bold text-[#0F4C5C]">Tailored Solutions for Every Stage</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Rocket,
+                title: "Early-Stage Biotechs",
+                description: "Navigate the path from discovery to IND with expert guidance on CMC strategy, risk mitigation, and resource optimization"
+              },
+              {
+                icon: LineChart,
+                title: "Mid-Stage Companies",
+                description: "Scale your processes, prepare for pivotal trials, and build robust manufacturing strategies for commercial readiness"
+              },
+              {
+                icon: Briefcase,
+                title: "Investors & VCs",
+                description: "Technical due diligence, portfolio company support, and strategic CMC assessments for informed investment decisions"
+              }
+            ].map((client, idx) => (
+              <div key={idx} className="relative bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 group overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0F4C5C]/5 to-transparent rounded-bl-full"></div>
+                <client.icon className="w-12 h-12 text-[#0F4C5C] mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl font-bold text-[#0F4C5C] mb-3">{client.title}</h3>
+                <p className="text-[#36454F] leading-relaxed">{client.description}</p>
+                <ChevronRight className="w-5 h-5 text-[#0F4C5C] mt-4 group-hover:translate-x-2 transition-transform" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#0F4C5C] to-[#1A5E70]">
+      <section className="py-20 bg-gradient-to-r from-[#0F4C5C] via-[#1A5E70] to-[#0F4C5C]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Accelerate Your Biologics Program?
-          </h2>
-          <p className="text-xl text-gray-100 mb-8">
-            Let's discuss how BCM Solutions can help you achieve your CMC goals and bring life-changing therapeutics to patients.
-          </p>
-          <a 
-            href="#contact" 
-            className="inline-flex items-center bg-white text-[#0F4C5C] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-lg"
-          >
-            Schedule a Consultation
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </a>
+          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Ready to Accelerate Your CMC Journey?
+            </h2>
+            <p className="text-xl text-gray-100 mb-8 leading-relaxed">
+              Let's discuss how BCM Solutions can help you navigate the complexities of biologics development 
+              and manufacturing. Our team brings the expertise, network, and strategic insight needed to turn 
+              your therapeutic vision into reality.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-[#0F4C5C] font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center">
+                Schedule a Consultation
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </button>
+              <button className="bg-transparent text-white font-semibold px-8 py-4 rounded-lg border-2 border-white hover:bg-white/10 transition-all">
+                Meet Our Team
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
   );
 };
 
-export default Content;
+export default Content
+
