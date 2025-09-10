@@ -8,53 +8,18 @@ const WhoWeAre: React.FC = () => {
       <section className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-white mb-4">Who We Are</h1>
-            <p className="text-xl text-gray-100 max-w-3xl mx-auto">
+            <h1 className="text-5xl font-semibold tracking-tight text-white mb-4">Who We Are</h1>
+            <p className="text-xl font-light text-gray-100 max-w-3xl mx-auto">
               A team of industry leaders dedicated to advancing biologics development through strategic expertise and innovative solutions
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-[#F0F7F8] p-8 rounded-xl">
-              <div className="flex items-center mb-4">
-                <Target className="w-8 h-8 text-[#0F4C5C] mr-3" />
-                <h2 className="text-2xl font-bold text-[#0F4C5C]">Our Mission</h2>
-              </div>
-              <p className="text-[#36454F] leading-relaxed">
-                To accelerate the development and commercialization of life-changing biologics by providing 
-                world-class CMC expertise, strategic guidance, and innovative solutions that transform 
-                complex challenges into successful outcomes for our clients.
-              </p>
-            </div>
-            <div className="bg-[#F0F7F8] p-8 rounded-xl">
-              <div className="flex items-center mb-4">
-                <Lightbulb className="w-8 h-8 text-[#0F4C5C] mr-3" />
-                <h2 className="text-2xl font-bold text-[#0F4C5C]">Our Vision</h2>
-              </div>
-              <p className="text-[#36454F] leading-relaxed">
-                To be the trusted partner of choice for biotech companies navigating the complex journey 
-                from discovery to commercialization, enabling breakthrough therapies that improve patient 
-                lives worldwide.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+   
       {/* Team Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#0F4C5C] mb-4">Our Leadership Team</h2>
-            <p className="text-xl text-[#36454F] max-w-3xl mx-auto">
-              Combining decades of experience with innovative thinking to deliver exceptional results
-            </p>
-          </div>
 
           {/* Bryant McLaughlin */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
@@ -189,7 +154,38 @@ const WhoWeAre: React.FC = () => {
             </div>
           </div>
         </div>
+        
+        {/* Mission & Vision */}
+        <div className="max-w-7xl mx-auto px-4 pt-6 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-[#F0F7F8] p-8 rounded-xl">
+              <div className="flex items-center mb-4">
+                <Target className="w-8 h-8 text-[#0F4C5C] mr-3" />
+                <h2 className="text-2xl font-bold text-[#0F4C5C]">Our Mission</h2>
+              </div>
+              <p className="text-[#36454F] leading-relaxed">
+                To accelerate the development and commercialization of life-changing biologics by providing 
+                world-class CMC expertise, strategic guidance, and innovative solutions that transform 
+                complex challenges into successful outcomes for our clients.
+              </p>
+            </div>
+            <div className="bg-[#F0F7F8] p-8 rounded-xl">
+              <div className="flex items-center mb-4">
+                <Lightbulb className="w-8 h-8 text-[#0F4C5C] mr-3" />
+                <h2 className="text-2xl font-bold text-[#0F4C5C]">Our Vision</h2>
+              </div>
+              <p className="text-[#36454F] leading-relaxed">
+                To be the trusted partner of choice for biotech companies navigating the complex journey 
+                from discovery to commercialization, enabling breakthrough therapies that improve patient 
+                lives worldwide.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
+
+     
+
     </div>
   );
 };

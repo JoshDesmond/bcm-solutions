@@ -3,7 +3,7 @@ import { Beaker, Microscope, FileText, Users, TrendingUp, Shield, Globe, ArrowRi
 
 export const Content: React.FC = () => {
   return (
-    <>
+    <div id="content">
       {/* Value Proposition Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -260,7 +260,7 @@ export const Content: React.FC = () => {
           </a>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

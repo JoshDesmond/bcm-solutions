@@ -41,7 +41,10 @@ export const Hero: React.FC = () => {
           <p className="mt-4 text-gray-100 text-xl font-light">
             Guiding biotech companies through all phases of Chemistry, Manufacturing, and Controls (CMC) from early-stage R&D to late-stage manufacturing.
           </p>
-          <div className="mt-8 flex flex-col md:flex-row md:space-x-4">
+          <div className="mt-8 flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+            <a href="#content" className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-800 px-6 py-3 rounded-lg transition-colors">
+              Learn More
+            </a>
             <a href="/contact" className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg transition-colors">
               Contact Us
             </a>
