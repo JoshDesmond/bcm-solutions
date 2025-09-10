@@ -78,7 +78,7 @@ const WhoWeAre: React.FC = () => {
                   biotech companies through all phases of Chemistry, Manufacturing, and Controls (CMC). His expertise 
                   spans from early-stage R&D to late-stage manufacturing, with a proven track record of optimizing 
                   biologics development and securing CMC regulatory success. Currently leading efforts with nearly a 
-                  dozen clients, including Myris Therapeutics, in investment due diligence, CMC strategy, and AI-powered IND writing.
+                  dozen clients in investment due diligence, CMC strategy, and AI-powered IND writing.
                 </p> 
 
                 <div className="mt-auto">
