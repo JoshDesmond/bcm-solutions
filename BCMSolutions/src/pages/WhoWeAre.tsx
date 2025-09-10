@@ -109,7 +109,7 @@ const WhoWeAre: React.FC = () => {
               <div className="md:col-span-2 flex flex-col h-full">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-3xl font-bold text-[#0F4C5C]">Tigran Lachinyan</h3>
-                  <a href="#" target="_blank" rel="noopener noreferrer" 
+                  <a href="https://www.linkedin.com/in/tigran-lachinyan-9a905623/" target="_blank" rel="noopener noreferrer" 
                      className="text-[#0F4C5C] hover:text-[#1A5E70] transition-colors">
                     <LinkedInIcon className="h-6 w-6" />
                   </a>
