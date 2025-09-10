@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Award, GraduationCap, Target, Users, Lightbulb, Eye } from 'lucide-react';
 import { LinkedInIcon } from '../assets/LinkedInIcon';
+import stockImage from '../assets/stock.png?url';
 
 // Background image for hero section
-const bgImage = 'https://media.istockphoto.com/id/1448369825/photo/research-medical-or-healthcare-science-or-formula-writing-on-glass-window-for-dna-innovation.webp?s=2048x2048&w=is&k=20&c=MiDQcz3wMZOboZC_OIlxVYWD9JzIuhz4aTaAWlyFsMc=';
+const bgImage = stockImage;
 
 const WhoWeAre: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,7 +26,7 @@ const WhoWeAre: React.FC = () => {
             backgroundImage: `url(${bgImage})`,
             opacity: isLoaded ? 0.9 : 0,
             filter: isLoaded ? 'none' : 'blur(20px)',
-            backgroundSize: 'cover',
+            backgroundSize: '100% auto',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}
