@@ -1,9 +1,9 @@
 import React from "react"
-import Contact from "../components/home/Contact/Contact"
+import Contact from "../components/Contact/ContactRoute.tsx"
 
 const ContactPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="bg-gray-50">
       <Contact />
     </div>
   )

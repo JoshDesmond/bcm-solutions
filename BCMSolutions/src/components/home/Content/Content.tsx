@@ -1,53 +1,22 @@
 
 import React from 'react';
 import { 
-  Microscope, Building2, TrendingUp, ShieldCheck, 
-  FileText, Handshake, Lightbulb, Dna, TestTube,
-  Clock, Scale, DollarSign, Shield, Rocket, 
-  LineChart, Briefcase, ArrowRight,
-  ChevronRight, Target,
+  Microscope, Building2, TrendingUp, ShieldCheck, FileText, Handshake, Lightbulb, Dna, TestTube, Clock, Scale, 
+  DollarSign, Shield, Rocket, LineChart, Briefcase, ArrowRight, Target,
 } from 'lucide-react';
-
-const Flask = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9 2v6l-2 2v8a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-8l-2-2V2"/>
-    <path d="M9 2h6"/>
-    <path d="M12 8v4"/>
-    <circle cx="12" cy="16" r="1"/>
-  </svg>
-);
-
-const Bacterium = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="3"/>
-    <circle cx="6" cy="6" r="2"/>
-    <circle cx="18" cy="6" r="2"/>
-    <circle cx="6" cy="18" r="2"/>
-    <circle cx="18" cy="18" r="2"/>
-    <path d="M12 9v6"/>
-    <path d="M9 12h6"/>
-    <path d="M6 6l6 6"/>
-    <path d="M18 6l-6 6"/>
-    <path d="M6 18l6-6"/>
-    <path d="M18 18l-6-6"/>
-  </svg>
-);
+import { FlaskIcon } from '../../../assets/FlaskIcon';
+import { MicrobiologyIcon } from '../../../assets/MicrobiologyIcon';
 
 const Content: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50" id="content">
-      {/* Hero Section with Value Proposition */}
-      <section className="relative bg-gradient-to-br from-[#0F4C5C] via-[#1A5E70] to-[#0F4C5C] py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Value Proposition Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Accelerate Your Biologics<br />Development Journey
-            </h1>
-            <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Proven Expertise</p>
+            <h2 className="text-4xl font-bold text-[#0F4C5C] mb-4">Accelerate Your Biologics Development Journey</h2>
+            <p className="text-xl text-[#36454F] max-w-3xl mx-auto leading-relaxed">
               With over 14 years of industry experience and a proven track record from early R&D through 
               commercial manufacturing, BCM Solutions delivers the strategic CMC expertise your biotech needs to succeed.
             </p>
@@ -61,10 +30,12 @@ const Content: React.FC = () => {
               { icon: TrendingUp, number: "$10M+", label: "Annual Budgets Managed" },
               { icon: ShieldCheck, number: "100%", label: "IND Success Rate" }
             ].map((stat, idx) => (
-              <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:bg-white/15">
-                <stat.icon className="w-8 h-8 text-white/80 mb-3" />
-                <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
-                <div className="text-sm text-gray-200">{stat.label}</div>
+              <div key={idx} className="bg-white rounded-xl p-6 shadow-md hover:bg-gray-50 transition-colors duration-300">
+                <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-full w-14 h-14 flex items-center justify-center mb-4">
+                  <stat.icon className="w-7 h-7 text-white" />
+                </div>
+                <div className="text-3xl font-bold text-[#0F4C5C] mb-1">{stat.number}</div>
+                <div className="text-sm text-[#36454F]">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -101,7 +72,7 @@ const Content: React.FC = () => {
                 description: "Expert contract negotiation and CDMO oversight. Tech transfer leadership for both microbial and mammalian systems, ensuring seamless transitions and timeline adherence."
               },
               {
-                icon: Flask,
+                icon: FlaskIcon,
                 title: "Process Development",
                 description: "Optimize your biologics manufacturing from cell culture through purification. Analytical method development, characterization, and validation for monoclonal antibodies and novel proteins."
               },
@@ -116,7 +87,7 @@ const Content: React.FC = () => {
                 description: "Investment and acquisition due diligence with deep technical assessment. Evaluate CMC risks, opportunities, and development timelines for informed decision-making."
               }
             ].map((service, idx) => (
-              <div key={idx} className="group bg-gray-50 rounded-xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div key={idx} className="group bg-white rounded-xl p-8 shadow-md hover:bg-gray-50 transition-colors duration-300">
                 <div className="bg-[#F0F7F8] rounded-full w-14 h-14 flex items-center justify-center mb-6 group-hover:bg-[#0F4C5C] transition-colors">
                   <service.icon className="w-7 h-7 text-[#0F4C5C] group-hover:text-white transition-colors" />
                 </div>
@@ -129,7 +100,7 @@ const Content: React.FC = () => {
       </section>
 
       {/* Expertise Section */}
-      <section className="py-20 bg-gradient-to-br from-[#F0F7F8] to-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Therapeutic Expertise</p>
@@ -140,12 +111,12 @@ const Content: React.FC = () => {
             {[
               { icon: Dna, title: "Monoclonal Antibodies", desc: "Including bispecific T-cell engagers and novel formats" },
               { icon: TestTube, title: "Cell & Gene Therapies", desc: "Exosomes and advanced therapeutic modalities" },
-              { icon: Flask, title: "Protein Therapeutics", desc: "Fusion proteins, peptides, and engineered biologics" },
-              { icon: Bacterium, title: "Microbial & Mammalian", desc: "Platform processes for both expression systems" }
+              { icon: FlaskIcon, title: "Protein Therapeutics", desc: "Fusion proteins, peptides, and engineered biologics" },
+              { icon: MicrobiologyIcon, title: "Microbial & Mammalian", desc: "Platform processes for both expression systems" }
             ].map((area, idx) => (
-              <div key={idx} className="text-center group cursor-pointer">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 group-hover:rotate-6 transition-transform">
+              <div key={idx} className="text-center group">
+                <div className="bg-white rounded-2xl p-8 shadow-md hover:bg-gray-50 transition-colors duration-300">
+                  <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                     <area.icon className="w-10 h-10 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-[#0F4C5C] mb-2">{area.title}</h3>
@@ -188,7 +159,7 @@ const Content: React.FC = () => {
                 description: "Successfully addressed FDA concerns on process and analytical methods, preparing multiple programs for Phase 3 studies"
               }
             ].map((achievement, idx) => (
-              <div key={idx} className="flex items-start space-x-4 bg-gray-50 rounded-xl p-6 hover:bg-[#F0F7F8] transition-colors">
+              <div key={idx} className="flex items-start space-x-4 bg-white rounded-xl p-6 shadow-md hover:bg-gray-50 transition-colors duration-300">
                 <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-lg p-3 flex-shrink-0">
                   <achievement.icon className="w-6 h-6 text-white" />
                 </div>
@@ -203,7 +174,7 @@ const Content: React.FC = () => {
       </section>
 
       {/* Client Focus Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Who We Serve</p>
@@ -228,12 +199,11 @@ const Content: React.FC = () => {
                 description: "Technical due diligence, portfolio company support, and strategic CMC assessments for informed investment decisions"
               }
             ].map((client, idx) => (
-              <div key={idx} className="relative bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 group overflow-hidden">
+              <div key={idx} className="relative bg-white rounded-xl shadow-md p-8 hover:bg-gray-50 transition-colors duration-300 group overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0F4C5C]/5 to-transparent rounded-bl-full"></div>
-                <client.icon className="w-12 h-12 text-[#0F4C5C] mb-4 group-hover:scale-110 transition-transform" />
+                <client.icon className="w-12 h-12 text-[#0F4C5C] mb-4" />
                 <h3 className="text-xl font-bold text-[#0F4C5C] mb-3">{client.title}</h3>
                 <p className="text-[#36454F] leading-relaxed">{client.description}</p>
-                <ChevronRight className="w-5 h-5 text-[#0F4C5C] mt-4 group-hover:translate-x-2 transition-transform" />
               </div>
             ))}
           </div>
@@ -253,13 +223,14 @@ const Content: React.FC = () => {
               your therapeutic vision into reality.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#0F4C5C] font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center">
+              {/* TODO update these to links to /who-we-are and /contact */}
+              <a href="/contact" className="bg-white text-[#0F4C5C] font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center">
                 Schedule a Consultation
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="bg-transparent text-white font-semibold px-8 py-4 rounded-lg border-2 border-white hover:bg-white/10 transition-all">
+              </a>
+              <a href="/who-we-are" className="bg-transparent text-white font-semibold px-8 py-4 rounded-lg border-2 border-white hover:bg-white/10 transition-all">
                 Meet Our Team
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
       />
 
       {/* Gradient overlay - Fairly subtle effect*/}
-      /*<div className="absolute inset-0 bg-gradient-to-br from-teal-900/40 to-slate-800/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-teal-900/40 to-slate-800/60" />
       
       {/* Content container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
@@ -41,11 +41,11 @@ export const Hero: React.FC = () => {
           <p className="mt-4 text-gray-100 text-xl font-light">
             Guiding biotech companies through all phases of Chemistry, Manufacturing, and Controls (CMC) from early-stage R&D to late-stage manufacturing.
           </p>
-          <div className="mt-8 flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
-            <a href="#content" className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-800 px-6 py-3 rounded-lg transition-colors">
+          <div className="mt-8 flex flex-row space-x-4 items-center justify-center md:justify-start">
+            <a href="#content" className="inline-flex items-center justify-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-800 px-6 py-3 rounded-lg transition-colors w-fit">
               Learn More
             </a>
-            <a href="/contact" className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg transition-colors">
+            <a href="/contact" className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg transition-colors w-fit">
               Contact Us
             </a>
           </div>

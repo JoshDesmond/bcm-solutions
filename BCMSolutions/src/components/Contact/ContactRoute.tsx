@@ -13,13 +13,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import useEmailSend, { EmailSendStatus } from './useEmailSend';
 
 const formSchema = z.object({
@@ -70,10 +63,10 @@ export const Contact: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="relative py-16 bg-white overflow-hidden">
+    <section id="contact" className="relative py-32 bg-white overflow-hidden">
       {/* Background image - optimized for performance */}
       <div 
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full"
         style={{
           backgroundImage: `url(${sfSkylineImage})`,
           backgroundSize: 'cover',
@@ -86,6 +79,7 @@ export const Contact: React.FC = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-lg mx-auto bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+
           <h2 className="text-[#0F4C5C] text-3xl font-semibold text-center">Get in touch</h2>
           <p className="mt-4 text-[#36454F] text-lg leading-relaxed text-center">
             Interested in learning more? Please reach out with the form below, or write to{' '}

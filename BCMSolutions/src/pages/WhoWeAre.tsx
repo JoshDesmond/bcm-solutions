@@ -1,15 +1,41 @@
-import React from 'react';
-import { Award, GraduationCap, Target, Users, Lightbulb, Linkedin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Award, GraduationCap, Target, Users, Lightbulb, Eye } from 'lucide-react';
+import { LinkedInIcon } from '../assets/LinkedInIcon';
 
-// TODO test using https://www.istockphoto.com/photo/research-medical-or-healthcare-science-or-formula-writing-on-glass-window-for-dna-gm1448369825-485911265?searchscope=image%2Cfilm
-// as background image for hero
+// Background image for hero section
+const bgImage = 'https://media.istockphoto.com/id/1448369825/photo/research-medical-or-healthcare-science-or-formula-writing-on-glass-window-for-dna-innovation.webp?s=2048x2048&w=is&k=20&c=MiDQcz3wMZOboZC_OIlxVYWD9JzIuhz4aTaAWlyFsMc=';
 
 const WhoWeAre: React.FC = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = bgImage;
+    img.onload = () => setIsLoaded(true);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-slate-800 overflow-hidden py-32">
+        {/* Background image - Color comes from mix-blend-multiply */}
+        <div 
+          className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-multiply transition-opacity duration-300"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            opacity: isLoaded ? 0.9 : 0,
+            filter: isLoaded ? 'none' : 'blur(20px)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+
+        {/* Gradient overlay - Fairly subtle effect*/}
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/40 to-slate-800/60" />
+
+        {/* Content container */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-semibold tracking-tight text-white mb-4">Who We Are</h1>
             <p className="text-xl font-light text-gray-100 max-w-3xl mx-auto">
@@ -39,7 +65,7 @@ const WhoWeAre: React.FC = () => {
                   <h3 className="text-3xl font-bold text-[#0F4C5C]">Dr. Bryant McLaughlin</h3>
                   <a href="https://www.linkedin.com/in/bryantmclaughlin/" target="_blank" rel="noopener noreferrer" 
                      className="text-[#0F4C5C] hover:text-[#1A5E70] transition-colors">
-                    <Linkedin className="w-6 h-6" />
+                    <LinkedInIcon className="h-6 w-6" />
                   </a>
                 </div>
                 <p className="text-lg text-[#36454F] font-semibold mb-4">President & Founder</p>
@@ -84,7 +110,7 @@ const WhoWeAre: React.FC = () => {
                   <h3 className="text-3xl font-bold text-[#0F4C5C]">Tigran Lachinyan</h3>
                   <a href="#" target="_blank" rel="noopener noreferrer" 
                      className="text-[#0F4C5C] hover:text-[#1A5E70] transition-colors">
-                    <Linkedin className="w-6 h-6" />
+                    <LinkedInIcon className="h-6 w-6" />
                   </a>
                 </div>
                 <p className="text-lg text-[#36454F] font-semibold mb-4">Strategic Business Development Lead</p>
@@ -174,7 +200,7 @@ const WhoWeAre: React.FC = () => {
             </div>
             <div className="bg-[#F0F7F8] p-8 rounded-xl">
               <div className="flex items-center mb-4">
-                <Lightbulb className="w-8 h-8 text-[#0F4C5C] mr-3" />
+                <Eye className="w-8 h-8 text-[#0F4C5C] mr-3" />
                 <h2 className="text-2xl font-bold text-[#0F4C5C]">Our Vision</h2>
               </div>
               <p className="text-[#36454F] leading-relaxed">
