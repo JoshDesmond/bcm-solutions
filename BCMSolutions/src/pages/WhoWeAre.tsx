@@ -1,6 +1,9 @@
 import React from 'react';
 import { Award, GraduationCap, Target, Users, Lightbulb, Linkedin } from 'lucide-react';
 
+// TODO test using https://www.istockphoto.com/photo/research-medical-or-healthcare-science-or-formula-writing-on-glass-window-for-dna-gm1448369825-485911265?searchscope=image%2Cfilm
+// as background image for hero
+
 const WhoWeAre: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
