@@ -28,7 +28,7 @@ const WhoWeAre: React.FC = () => {
             backgroundImage: `url(${bgImage})`,
             opacity: isLoaded ? 0.9 : 0,
             filter: isLoaded ? 'none' : 'blur(20px)',
-            backgroundSize: '100% auto',
+            backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}
