@@ -87,7 +87,7 @@ const Content: React.FC = () => {
                 description: "Investment and acquisition due diligence with deep technical assessment. Evaluate CMC risks, opportunities, and development timelines for informed decision-making."
               }
             ].map((service, idx) => (
-              <div key={idx} className="group bg-white rounded-xl p-8 shadow-md hover:bg-gray-50 transition-colors duration-300">
+              <div key={idx} className="group bg-gray-50 rounded-xl p-8 shadow-md hover:bg-gray-100 transition-colors duration-300">
                 <div className="bg-[#F0F7F8] rounded-full w-14 h-14 flex items-center justify-center mb-6 group-hover:bg-[#0F4C5C] transition-colors">
                   <service.icon className="w-7 h-7 text-[#0F4C5C] group-hover:text-white transition-colors" />
                 </div>
@@ -159,7 +159,7 @@ const Content: React.FC = () => {
                 description: "Successfully addressed FDA concerns on process and analytical methods, preparing multiple programs for Phase 3 studies"
               }
             ].map((achievement, idx) => (
-              <div key={idx} className="flex items-start space-x-4 bg-white rounded-xl p-6 shadow-md hover:bg-gray-50 transition-colors duration-300">
+              <div key={idx} className="flex items-start space-x-4 bg-gray-50 rounded-xl p-6 shadow-md hover:bg-gray-100 transition-colors duration-300">
                 <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-lg p-3 flex-shrink-0">
                   <achievement.icon className="w-6 h-6 text-white" />
                 </div>
