@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Award, GraduationCap, Target, Users, Lightbulb, Eye } from 'lucide-react';
 import { LinkedInIcon } from '../assets/LinkedInIcon';
 import stockImage from '../assets/stock.png?url';
+import bryantImage from '../assets/bryant.jpg?url';
+import tigranImage from '../assets/tigran.jpeg?url';
 
 // Background image for hero section
 const bgImage = stockImage;
@@ -56,7 +58,7 @@ const WhoWeAre: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-8 h-full">
               <div className="md:col-span-1">
                 <img 
-                  src="/src/assets/bryant.jpg" 
+                  src={bryantImage} 
                   alt="Dr. Bryant McLaughlin" 
                   className="w-full h-auto rounded-lg shadow-md"
                 />
@@ -101,7 +103,7 @@ const WhoWeAre: React.FC = () => {
             <div className="grid md:grid-cols-3 gap-8 h-full">
               <div className="md:col-span-1">
                 <img 
-                  src="/src/assets/tigran.jpeg" 
+                  src={tigranImage} 
                   alt="Tigran Lachinyan" 
                   className="w-full h-auto rounded-lg shadow-md grayscale"
                 />
