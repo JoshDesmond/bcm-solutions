@@ -19,7 +19,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: "Contact",
-    href: "#contact"
+    href: "/contact"
   }
 ];
 
@@ -69,53 +69,27 @@ export const Header: React.FC = () => {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const renderNavigationLink = (item: NavigationItem) => {
-    if (item.href.startsWith('#')) {
-      // Hash links for same-page navigation
-      return (
-        <a 
-          href={item.href} 
-          className={linkStyles.base}
-        >
-          {item.name}
-        </a>
-      );
-    } else {
-      // React Router links for page navigation
-      return (
-        <Link 
-          to={item.href} 
-          className={linkStyles.base}
-        >
-          {item.name}
-        </Link>
-      );
-    }
+
+    return (
+      <Link 
+        to={item.href} 
+        className={linkStyles.base}
+      >
+        {item.name}
+      </Link>
+    );
   };
 
   const renderMobileNavigationLink = (item: NavigationItem) => {
-    if (item.href.startsWith('#')) {
-      // Hash links for same-page navigation
-      return (
-        <a
-          href={item.href}
-          className={linkStyles.mobile}
-          onClick={closeMobileMenu}
-        >
-          {item.name}
-        </a>
-      );
-    } else {
-      // React Router links for page navigation
-      return (
-        <Link
-          to={item.href}
-          className={linkStyles.mobile}
-          onClick={closeMobileMenu}
-        >
-          {item.name}
-        </Link>
-      );
-    }
+    return (
+      <Link
+        to={item.href}
+      className={linkStyles.mobile}
+        onClick={closeMobileMenu}
+      >
+        {item.name}
+      </Link>
+    );
   };
 
   return (
@@ -123,7 +97,7 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
         <Link 
           to="/" 
-          className="flex items-center hover:opacity-80 transition-opacity duration-200 hover:scale-105 transform transition-transform"
+          className="flex items-center hover:opacity-80 duration-200 hover:scale-105 transform transition-transform"
         >
           <img 
             src={bcmLogo} 

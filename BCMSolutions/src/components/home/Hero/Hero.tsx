@@ -42,8 +42,8 @@ export const Hero: React.FC = () => {
             Guiding biotech companies through all phases of Chemistry, Manufacturing, and Controls (CMC) from early-stage R&D to late-stage manufacturing.
           </p>
           <div className="mt-8 flex flex-col md:flex-row md:space-x-4">
-            <a href="#contact" className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg transition-colors">
-              Book Free Consultation
+            <a href="/contact" className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg transition-colors">
+              Contact Us
             </a>
           </div>
         </div>
