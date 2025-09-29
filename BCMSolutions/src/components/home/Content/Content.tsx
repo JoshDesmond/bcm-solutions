@@ -17,7 +17,7 @@ const Content: React.FC = () => {
             <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Proven Expertise</p>
             <h2 className="text-4xl font-bold text-[#0F4C5C] mb-4">Accelerate Your Biologics Development Journey</h2>
             <p className="text-xl text-[#36454F] max-w-3xl mx-auto leading-relaxed">
-              With over 14 years of industry experience and a proven track record from early R&D through 
+              With over 20 years of industry experience and a proven track record from early R&D through 
               commercial manufacturing, BCM Solutions delivers the strategic CMC expertise your biotech needs to succeed.
             </p>
           </div>
@@ -25,7 +25,7 @@ const Content: React.FC = () => {
           {/* Key Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: Microscope, number: "14+", label: "Years CMC Experience" },
+              { icon: Microscope, number: "20+", label: "Years CMC Experience" },
               { icon: Building2, number: "12+", label: "Biotech Clients Served" },
               { icon: TrendingUp, number: "$10M+", label: "Annual Budgets Managed" },
               { icon: ShieldCheck, number: "100%", label: "IND Success Rate" }
@@ -57,24 +57,9 @@ const Content: React.FC = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: Target,
-                title: "CMC Strategy & Planning",
-                description: "Develop comprehensive CMC roadmaps aligned with your clinical timelines and regulatory milestones. Expert guidance on cell line development, process optimization, and scale-up strategies."
-              },
-              {
-                icon: FileText,
-                title: "Regulatory Excellence",
-                description: "Navigate complex regulatory landscapes with confidence. IND/BLA writing, FDA meeting preparation, and global regulatory strategy for biologics and novel therapeutic modalities."
-              },
-              {
-                icon: Handshake,
-                title: "CDMO Management",
-                description: "Expert contract negotiation and CDMO oversight. Tech transfer leadership for both microbial and mammalian systems, ensuring seamless transitions and timeline adherence."
-              },
-              {
                 icon: FlaskIcon,
                 title: "Process Development",
-                description: "Optimize your biologics manufacturing from cell culture through purification. Analytical method development, characterization, and validation for monoclonal antibodies and novel proteins."
+                description: "Optimize your biologics manufacturing from cell culture through purification across multiple expression systems including E. coli, P. pastoris, and CHO cells. We provide comprehensive analytical method development, characterization, and validation services for novel proteins, monoclonal antibodies, and other biotherapeutics."
               },
               {
                 icon: TrendingUp,
@@ -85,7 +70,22 @@ const Content: React.FC = () => {
                 icon: Lightbulb,
                 title: "Due Diligence",
                 description: "Investment and acquisition due diligence with deep technical assessment. Evaluate CMC risks, opportunities, and development timelines for informed decision-making."
-              }
+              },
+              {
+                icon: Target,
+                title: "CMC Strategy & Planning",
+                description: "Develop comprehensive CMC roadmaps aligned with your clinical timelines and regulatory milestones. Expert guidance on cell line development, process optimization, and scale-up strategies."
+              },
+              {
+                icon: FileText,
+                title: "Regulatory Excellence",
+                description: "Navigate complex regulatory landscapes with confidence. IND/BLA, FDA meeting preparation, and global regulatory strategy for biologics and novel therapeutic modalities."
+              },
+              {
+                icon: Handshake,
+                title: "CDMO Management",
+                description: "Expert contract negotiation and CDMO oversight. Tech transfer leadership for both microbial and mammalian systems, ensuring seamless transitions and timeline adherence."
+              },
             ].map((service, idx) => (
               <div key={idx} className="group bg-gray-50 rounded-xl p-8 shadow-md hover:bg-gray-100 transition-colors duration-300">
                 <div className="bg-[#F0F7F8] rounded-full w-14 h-14 flex items-center justify-center mb-6 group-hover:bg-[#0F4C5C] transition-colors">
@@ -107,12 +107,14 @@ const Content: React.FC = () => {
             <h2 className="text-4xl font-bold text-[#0F4C5C]">Specialized in Complex Biologics</h2>
           </div>
           
+          {/* TODO, standardize card heights */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Dna, title: "Monoclonal Antibodies", desc: "Including bispecific T-cell engagers and novel formats" },
-              { icon: TestTube, title: "Cell & Gene Therapies", desc: "Exosomes and advanced therapeutic modalities" },
               { icon: FlaskIcon, title: "Protein Therapeutics", desc: "Fusion proteins, peptides, and engineered biologics" },
-              { icon: MicrobiologyIcon, title: "Microbial & Mammalian", desc: "Platform processes for both expression systems" }
+              { icon: MicrobiologyIcon, title: "E. coli Expression", desc: "Experts in E. coli genetics, strain optimization, fermentation scale-up & GMP manufacturing" },
+              // TODO, find better icon for Mammalian Expression to contrast with the prokaryotic icon
+              { icon: TestTube, title: "Eukaryotic Expression", desc: "Expertise in P. pastoris and CHO cell line development, including optimization and scale-up through all phases of GMP manufacturing." },
+              { icon: Dna, title: "Monoclonal Antibodies", desc: "Including bispecific T-cell engagers and novel formats" },
             ].map((area, idx) => (
               <div key={idx} className="text-center group">
                 <div className="bg-white rounded-2xl p-8 shadow-md hover:bg-gray-50 transition-colors duration-300">
@@ -140,13 +142,13 @@ const Content: React.FC = () => {
             {[
               {
                 icon: Clock,
-                title: "12-Month IND Timeline",
-                description: "Accelerated monoclonal antibody development from cell line to IND filing using innovative transposon-based strategies"
+                title: "12-Month IND Timelines",
+                description: "Support of accelerated biologics development from amino acid sequence to IND filing"
               },
               {
                 icon: Scale,
-                title: "10X Scale-Up Success",
-                description: "Successfully scaled biologics manufacturing from 100L to 1,000L while maintaining product quality and reducing COGS"
+                title: "Multiple 1000X Scale-Up Successes",
+                description: "Successfully scaled biologics manufacturing from 2L to 2,000L+ while maintaining product quality and reducing COGS"
               },
               {
                 icon: DollarSign,
@@ -156,7 +158,7 @@ const Content: React.FC = () => {
               {
                 icon: Shield,
                 title: "FDA Success",
-                description: "Successfully addressed FDA concerns on process and analytical methods, preparing multiple programs for Phase 3 studies"
+                description: "Significant experience in successful FDA interactions on CMC matters. Successfully addressed FDA concerns on process and analytical methods, preparing multiple programs for Phase 3 studies"
               }
             ].map((achievement, idx) => (
               <div key={idx} className="flex items-start space-x-4 bg-gray-50 rounded-xl p-6 shadow-md hover:bg-gray-100 transition-colors duration-300">

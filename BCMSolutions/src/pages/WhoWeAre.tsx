@@ -74,7 +74,7 @@ const WhoWeAre: React.FC = () => {
                 <p className="text-lg text-[#36454F] font-semibold mb-4">President & Founder</p>
                 
                 <p className="text-[#36454F] mb-6 leading-relaxed flex-grow">
-                  As President of BCM Solutions LLC, Dr. McLaughlin leverages over 14 years of experience to guide 
+                  As President of BCM Solutions LLC, Dr. McLaughlin leverages over 20 years of experience to guide 
                   biotech companies through all phases of Chemistry, Manufacturing, and Controls (CMC). His expertise 
                   spans from early-stage R&D to late-stage manufacturing, with a proven track record of optimizing 
                   biologics development and securing CMC regulatory success. Currently leading efforts with nearly a 
@@ -119,7 +119,7 @@ const WhoWeAre: React.FC = () => {
                 <p className="text-lg text-[#36454F] font-semibold mb-4">Strategic Business Development Lead</p>
                 
                 <p className="text-[#36454F] mb-6 leading-relaxed flex-grow">
-                  Tigran brings a proven track record in strategic partnerships, contract negotiation, and cross-functional 
+                  Tigran brings 20 years of experience and a proven track record in strategic partnerships, contract negotiation, and cross-functional 
                   team leadership to accelerate biotech development and drive revenue growth. With deep technical expertise 
                   in biotechnology and pharmaceutical processes combined with comprehensive understanding of market dynamics, 
                   he specializes in tech-bio innovation and AI-powered life sciences solutions.
