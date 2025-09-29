@@ -21,14 +21,13 @@ export const useEmailSend = ({ onStatusChange }: UseEmailSendProps) => {
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
-        service: formData.service,
         message: formData.message,
-        to_name: 'Josh Desmond',
+        to_name: 'Bryant McLaughlin',
       };
 
       await emailjs.send(
-        'service_u0tg7s9', // EmailJS service ID
-        'template_o3st8u8', // EmailJS template ID
+        'service_rbt6n1r', // EmailJS service ID
+        'template_j0ldibq', // EmailJS template ID
         templateParams,
         'zgI3FjTCl-g92M_lP' // Replace with your EmailJS public key
       );
