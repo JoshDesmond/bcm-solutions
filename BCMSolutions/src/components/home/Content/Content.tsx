@@ -44,7 +44,7 @@ const Content: React.FC = () => {
 
       {/* Services Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Comprehensive Solutions</p>
             <h2 className="text-4xl font-bold text-[#0F4C5C] mb-4">End-to-End CMC Services</h2>
@@ -87,11 +87,13 @@ const Content: React.FC = () => {
                 description: "Expert contract negotiation and CDMO oversight. Tech transfer leadership for both microbial and mammalian systems, ensuring seamless transitions and timeline adherence."
               },
             ].map((service, idx) => (
-              <div key={idx} className="group bg-gray-50 rounded-xl p-8 shadow-md hover:bg-gray-100 transition-colors duration-300">
-                <div className="bg-[#F0F7F8] rounded-full w-14 h-14 flex items-center justify-center mb-6 group-hover:bg-[#0F4C5C] transition-colors">
-                  <service.icon className="w-7 h-7 text-[#0F4C5C] group-hover:text-white transition-colors" />
+              <div key={idx} className="group bg-gray-50 rounded-xl p-8 shadow-md hover:bg-gray-100 transition-colors duration-300 min-h-[340px]">
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-xl font-bold text-[#0F4C5C]">{service.title}</h3>
+                  <div className="bg-[#F0F7F8] rounded-full w-14 h-14 flex items-center justify-center group-hover:bg-[#0F4C5C] transition-colors">
+                    <service.icon className="w-7 h-7 text-[#0F4C5C] group-hover:text-white transition-colors" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-[#0F4C5C] mb-3">{service.title}</h3>
                 <p className="text-[#36454F] leading-relaxed">{service.description}</p>
               </div>
             ))}
@@ -116,8 +118,8 @@ const Content: React.FC = () => {
               { icon: TestTube, title: "Eukaryotic Expression", desc: "Expertise in P. pastoris and CHO cell line development, including optimization and scale-up through all phases of GMP manufacturing." },
               { icon: Dna, title: "Monoclonal Antibodies", desc: "Including bispecific T-cell engagers and novel formats" },
             ].map((area, idx) => (
-              <div key={idx} className="text-center group">
-                <div className="bg-white rounded-2xl p-8 shadow-md hover:bg-gray-50 transition-colors duration-300">
+              <div key={idx} className="text-center group h-full">
+                <div className="bg-white rounded-2xl p-8 shadow-md hover:bg-gray-50 transition-colors duration-300 h-full">
                   <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                     <area.icon className="w-10 h-10 text-white" />
                   </div>
