@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Award, GraduationCap, Target, Users, Lightbulb, Eye } from 'lucide-react';
 import { LinkedInIcon } from '../assets/LinkedInIcon';
-import stockImage from '../assets/stock.png?url';
+import stockImage from '../assets/iStock-1448369825.jpg?url';
 import bryantImage from '../assets/bryant.jpg?url';
 import tigranImage from '../assets/tigran.jpeg?url';
 
