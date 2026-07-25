@@ -25,12 +25,9 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           <div className="md:col-span-2">
-            {/* Echoes the wordmark: BCM set wide, SOLUTIONS ruled and letterspaced */}
-            <p className="font-display text-3xl font-semibold tracking-[0.06em] text-white">BCM</p>
-            <p className="eyebrow text-white/65 mt-2 mb-6">Solutions LLC</p>
-
+            <h3 className="font-display text-xl font-semibold text-white mb-4">BCM Solutions LLC</h3>
             <p className="leading-relaxed max-w-md text-white/70">
-              Biopharma Consulting — Guiding biotech companies through all phases of Chemistry, Manufacturing, and Controls (CMC).
+              Biopharma Consulting. Guiding biotech companies through all phases of Chemistry, Manufacturing, and Controls (CMC).
             </p>
           </div>
           
