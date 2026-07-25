@@ -13,6 +13,14 @@ export const Footer: React.FC = () => {
             <p className="text-gray-300 leading-relaxed max-w-md">
               Biopharma Consulting - Guiding biotech companies through all phases of Chemistry, Manufacturing, and Controls (CMC).
             </p>
+            <a
+              href="https://www.mclaughlinweb.com"
+              className="inline-block mt-4 text-gray-400 hover:text-white transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Community Outreach: Education
+            </a>
           </div>
           
           {/* Navigation Links */}
