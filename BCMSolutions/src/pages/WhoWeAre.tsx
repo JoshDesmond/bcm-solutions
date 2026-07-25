@@ -8,9 +8,7 @@ import tigranImage from '../assets/tigran.jpeg?url';
 // Background image for hero section
 const bgImage = stockImage;
 
-// One treatment for both portraits, which arrive from different studios; colour on hover.
-const portraitStyles =
-  'w-full h-auto rounded-lg shadow-card grayscale-[0.4] transition-[filter] duration-500 hover:grayscale-0';
+const portraitStyles = 'w-full h-auto rounded-lg shadow-card';
 
 const values = [
   {
@@ -133,7 +131,7 @@ const WhoWeAre: React.FC = () => {
                 <img 
                   src={tigranImage} 
                   alt="Tigran Lachinyan" 
-                  className={portraitStyles}
+                  className={`${portraitStyles} grayscale`}
                 />
               </div>
               <div className="md:col-span-2 flex flex-col h-full">
