@@ -37,6 +37,9 @@ const fieldStyles =
 
 const labelStyles = "font-mono text-[0.65rem] uppercase tracking-[0.18em] text-ink/75";
 
+const sfSkylineImage =
+  'https://images.unsplash.com/photo-1656716705147-7ab83f50e956?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+
 export const Contact: React.FC = () => {
   const [submitStatus, setSubmitStatus] = useState<EmailSendStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -67,8 +70,21 @@ export const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="relative surface-tint py-24 md:py-28 overflow-hidden">
-      {/* Brand wash behind the form, replacing the generic stock backdrop */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-brand/[0.07] to-transparent" />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-64 md:h-[70%] grayscale opacity-[0.22]"
+        style={{
+          backgroundImage: `url(${sfSkylineImage})`,
+          backgroundSize: 'cover',
+          // Centred, not bottom-anchored: a bottom crop on narrow viewports lands on open water.
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          maskImage: 'linear-gradient(to top, #000 0%, #000 30%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to top, #000 0%, #000 30%, transparent 100%)',
+        }}
+      />
+
+      {/* Teal wash that pulls the photograph into the palette */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand/[0.07] via-transparent to-brand/[0.12]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-lg mx-auto">
