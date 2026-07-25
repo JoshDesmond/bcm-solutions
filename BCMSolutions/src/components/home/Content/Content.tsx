@@ -7,35 +7,36 @@ import {
 import { FlaskIcon } from '../../../assets/FlaskIcon';
 import { MicrobiologyIcon } from '../../../assets/MicrobiologyIcon';
 
+const index = (idx: number) => String(idx + 1).padStart(2, '0');
+
 const Content: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50" id="content">
+    <div className="min-h-screen" id="content">
       {/* Value Proposition Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="surface-tint py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Proven Expertise</p>
-            <h2 className="text-4xl font-bold text-[#0F4C5C] mb-4">Accelerate Your Biologics Development Journey</h2>
-            <p className="text-xl text-[#36454F] max-w-3xl mx-auto leading-relaxed">
+            <p className="eyebrow text-copper-deep mb-5">Proven Expertise</p>
+            <h2 className="text-title mb-5">Accelerate Your Biologics Development Journey</h2>
+            <p className="text-xl text-ink/80 max-w-3xl mx-auto leading-relaxed">
               With over 20 years of industry experience and a proven track record from early R&D through 
               commercial manufacturing, BCM Solutions delivers the strategic CMC expertise your biotech needs to succeed.
             </p>
           </div>
           
-          {/* Key Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {/* Key Metrics — instrument-panel readouts rather than cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule/60 border border-rule/60 rounded-xl overflow-hidden max-w-5xl mx-auto">
             {[
               { icon: Microscope, number: "20+", label: "Years CMC Experience" },
               { icon: Building2, number: "12+", label: "Biotech Clients Served" },
               { icon: TrendingUp, number: "$10M+", label: "Annual Budgets Managed" },
               { icon: ShieldCheck, number: "100%", label: "IND Success Rate" }
             ].map((stat, idx) => (
-              <div key={idx} className="bg-white rounded-xl p-6 shadow-md hover:bg-gray-50 transition-colors duration-300">
-                <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-full w-14 h-14 flex items-center justify-center mb-4">
-                  <stat.icon className="w-7 h-7 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-[#0F4C5C] mb-1">{stat.number}</div>
-                <div className="text-sm text-[#36454F]">{stat.label}</div>
+              <div key={idx} className="group relative bg-paper p-6 md:p-8 transition-colors duration-300 hover:bg-white">
+                <span className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-copper transition-transform duration-500 group-hover:scale-x-100" />
+                <stat.icon className="w-5 h-5 text-brand/50 mb-6 transition-colors duration-300 group-hover:text-copper" />
+                <div className="readout text-3xl md:text-4xl font-semibold text-brand mb-2">{stat.number}</div>
+                <div className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink/75 leading-relaxed">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -43,18 +44,18 @@ const Content: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section className="surface-paper py-20 md:py-24">
         <div className="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Comprehensive Solutions</p>
-            <h2 className="text-4xl font-bold text-[#0F4C5C] mb-4">End-to-End CMC Services</h2>
-            <p className="text-xl text-[#36454F] max-w-3xl mx-auto">
+            <p className="eyebrow text-copper-deep mb-5">Comprehensive Solutions</p>
+            <h2 className="text-title mb-5">End-to-End CMC Services</h2>
+            <p className="text-xl text-ink/80 max-w-3xl mx-auto leading-relaxed">
               From early-stage development to commercial manufacturing, we provide the technical leadership 
               and strategic direction needed at every phase of your biologics journey.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
             {[
               {
                 icon: FlaskIcon,
@@ -87,14 +88,16 @@ const Content: React.FC = () => {
                 description: "Expert contract negotiation and CDMO oversight. Tech transfer leadership for both microbial and mammalian systems, ensuring seamless transitions and timeline adherence."
               },
             ].map((service, idx) => (
-              <div key={idx} className="group bg-gray-50 rounded-xl p-8 shadow-md hover:bg-gray-100 transition-colors duration-300 min-h-[340px]">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold text-[#0F4C5C]">{service.title}</h3>
-                  <div className="bg-[#F0F7F8] rounded-full w-14 h-14 flex items-center justify-center group-hover:bg-[#0F4C5C] transition-colors">
-                    <service.icon className="w-7 h-7 text-[#0F4C5C] group-hover:text-white transition-colors" />
-                  </div>
+              <div
+                key={idx}
+                className="group relative border-l border-rule pl-6 md:pl-7 transition-colors duration-300 hover:border-copper"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="readout text-xs text-copper-deep">{index(idx)}</span>
+                  <service.icon className="w-5 h-5 text-brand/45 transition-colors duration-300 group-hover:text-brand" />
                 </div>
-                <p className="text-[#36454F] leading-relaxed">{service.description}</p>
+                <h3 className="text-xl mb-3">{service.title}</h3>
+                <p className="text-ink/80 leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -102,14 +105,13 @@ const Content: React.FC = () => {
       </section>
 
       {/* Expertise Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="surface-tint py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Therapeutic Expertise</p>
-            <h2 className="text-4xl font-bold text-[#0F4C5C]">Specialized in Complex Biologics</h2>
+            <p className="eyebrow text-copper-deep mb-5">Therapeutic Expertise</p>
+            <h2 className="text-title">Specialized in Complex Biologics</h2>
           </div>
           
-          {/* TODO, standardize card heights */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: FlaskIcon, title: "Protein Therapeutics", desc: "Fusion proteins, peptides, and engineered biologics" },
@@ -118,14 +120,15 @@ const Content: React.FC = () => {
               { icon: TestTube, title: "Eukaryotic Expression", desc: "Expertise in P. pastoris and CHO cell line development, including optimization and scale-up through all phases of GMP manufacturing." },
               { icon: Dna, title: "Monoclonal Antibodies", desc: "Including bispecific T-cell engagers and novel formats" },
             ].map((area, idx) => (
-              <div key={idx} className="text-center group h-full">
-                <div className="bg-white rounded-2xl p-8 shadow-md hover:bg-gray-50 transition-colors duration-300 h-full">
-                  <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                    <area.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold text-[#0F4C5C] mb-2">{area.title}</h3>
-                  <p className="text-sm text-[#36454F]">{area.desc}</p>
+              <div
+                key={idx}
+                className="group flex h-full flex-col items-center rounded-xl border border-rule/70 bg-paper p-8 text-center transition-all duration-300 hover:border-brand/30 hover:shadow-card"
+              >
+                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-brand/15 bg-brand-tint transition-colors duration-300 group-hover:border-transparent group-hover:bg-brand">
+                  <area.icon className="h-8 w-8 text-brand transition-colors duration-300 group-hover:text-white" />
                 </div>
+                <h3 className="text-lg mb-3">{area.title}</h3>
+                <p className="text-sm text-ink/75 leading-relaxed">{area.desc}</p>
               </div>
             ))}
           </div>
@@ -133,14 +136,15 @@ const Content: React.FC = () => {
       </section>
 
       {/* Track Record Section */}
-      <section className="py-20 bg-white">
+      <section className="surface-paper py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Proven Results</p>
-            <h2 className="text-4xl font-bold text-[#0F4C5C]">Success Stories That Matter</h2>
+            <p className="eyebrow text-copper-deep mb-5">Proven Results</p>
+            <h2 className="text-title">Success Stories That Matter</h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Achievements read as a ledger: ruled rows, not floating cards */}
+          <div className="max-w-4xl mx-auto border-t border-rule">
             {[
               {
                 icon: Clock,
@@ -163,13 +167,17 @@ const Content: React.FC = () => {
                 description: "Significant experience in successful FDA interactions on CMC matters. Successfully addressed FDA concerns on process and analytical methods, preparing multiple programs for Phase 3 studies"
               }
             ].map((achievement, idx) => (
-              <div key={idx} className="flex items-start space-x-4 bg-gray-50 rounded-xl p-6 shadow-md hover:bg-gray-100 transition-colors duration-300">
-                <div className="bg-gradient-to-br from-[#0F4C5C] to-[#1A5E70] rounded-lg p-3 flex-shrink-0">
-                  <achievement.icon className="w-6 h-6 text-white" />
+              <div
+                key={idx}
+                className="group grid grid-cols-[auto_1fr] items-start gap-5 md:gap-8 border-b border-rule py-7 transition-colors duration-300 hover:bg-brand-tint/50"
+              >
+                <div className="flex items-center gap-4 pt-1">
+                  <span className="readout text-xs text-copper-deep hidden sm:inline">{index(idx)}</span>
+                  <achievement.icon className="h-6 w-6 flex-shrink-0 text-brand/50 transition-colors duration-300 group-hover:text-brand" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#0F4C5C] mb-2">{achievement.title}</h3>
-                  <p className="text-[#36454F] leading-relaxed">{achievement.description}</p>
+                  <h3 className="text-xl mb-2">{achievement.title}</h3>
+                  <p className="text-ink/80 leading-relaxed">{achievement.description}</p>
                 </div>
               </div>
             ))}
@@ -178,14 +186,14 @@ const Content: React.FC = () => {
       </section>
 
       {/* Client Focus Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="surface-tint py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-[#0F4C5C] uppercase tracking-wide mb-2">Who We Serve</p>
-            <h2 className="text-4xl font-bold text-[#0F4C5C]">Tailored Solutions for Every Stage</h2>
+            <p className="eyebrow text-copper-deep mb-5">Who We Serve</p>
+            <h2 className="text-title">Tailored Solutions for Every Stage</h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: Rocket,
@@ -203,11 +211,15 @@ const Content: React.FC = () => {
                 description: "Technical due diligence, portfolio company support, and strategic CMC assessments for informed investment decisions"
               }
             ].map((client, idx) => (
-              <div key={idx} className="relative bg-white rounded-xl shadow-md p-8 hover:bg-gray-50 transition-colors duration-300 group overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0F4C5C]/5 to-transparent rounded-bl-full"></div>
-                <client.icon className="w-12 h-12 text-[#0F4C5C] mb-4" />
-                <h3 className="text-xl font-bold text-[#0F4C5C] mb-3">{client.title}</h3>
-                <p className="text-[#36454F] leading-relaxed">{client.description}</p>
+              <div
+                key={idx}
+                className="group relative overflow-hidden rounded-xl border border-rule/70 bg-paper p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-lift"
+              >
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-brand/10 to-transparent transition-transform duration-500 group-hover:scale-125" />
+                <span className="readout relative text-xs text-copper-deep">{index(idx)}</span>
+                <client.icon className="relative mt-5 mb-5 h-9 w-9 text-brand" />
+                <h3 className="relative text-xl mb-3">{client.title}</h3>
+                <p className="relative text-ink/80 leading-relaxed">{client.description}</p>
               </div>
             ))}
           </div>
@@ -215,27 +227,32 @@ const Content: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#0F4C5C] via-[#1A5E70] to-[#0F4C5C]">
+      <section className="surface-deep py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Ready to Accelerate Your CMC Journey?
-            </h2>
-            <p className="text-xl text-gray-100 mb-8 leading-relaxed">
-              Let's discuss how BCM Solutions can help you navigate the complexities of biologics development 
-              and manufacturing. Our team brings the expertise, network, and strategic insight needed to turn 
-              your therapeutic vision into reality.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* TODO update these to links to /who-we-are and /contact */}
-              <a href="/contact" className="bg-white text-[#0F4C5C] font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center justify-center">
-                Schedule a Consultation
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
-              <a href="/who-we-are" className="bg-transparent text-white font-semibold px-8 py-4 rounded-lg border-2 border-white hover:bg-white/10 transition-all">
-                Meet Our Team
-              </a>
-            </div>
+          <p className="eyebrow text-copper-lift mb-6">Next Step</p>
+          <h2 className="text-title text-white mb-6">
+            Ready to Accelerate Your CMC Journey?
+          </h2>
+          <div className="mx-auto mb-8 h-px w-24 bg-copper" />
+          <p className="text-lg md:text-xl text-white/75 mb-10 leading-relaxed">
+            Let's discuss how BCM Solutions can help you navigate the complexities of biologics development 
+            and manufacturing. Our team brings the expertise, network, and strategic insight needed to turn 
+            your therapeutic vision into reality.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="/contact"
+              className="group inline-flex items-center justify-center rounded-lg bg-copper px-8 py-4 font-mono text-xs uppercase tracking-[0.18em] text-white transition-colors hover:bg-copper-deep"
+            >
+              Schedule a Consultation
+              <ArrowRight className="ml-3 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+            <a
+              href="/who-we-are"
+              className="inline-flex items-center justify-center rounded-lg border border-white/40 px-8 py-4 font-mono text-xs uppercase tracking-[0.18em] text-white transition-colors hover:bg-white hover:text-brand-deep"
+            >
+              Meet Our Team
+            </a>
           </div>
         </div>
       </section>

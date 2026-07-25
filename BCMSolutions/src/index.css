@@ -2,63 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    /* Brand palette, sampled from the BCM Solutions mark */
+    --brand-deep: 192 77% 14%;
+    --brand: 192 72% 21%;
+    --brand-lift: 193 62% 27%;
+    --brand-tint: 188 36% 96%;
+    /* Three coppers: a fill, a darker one that clears AA as text on light
+       surfaces, and a brighter one that clears AA as text on the deep teal. */
+    --copper: 21 72% 44%;
+    --copper-deep: 21 76% 37%;
+    --copper-lift: 24 85% 62%;
+    --ink: 204 19% 26%;
+    --paper: 180 14% 99%;
+    --rule: 192 30% 84%;
+
+    /* shadcn tokens, mapped onto the brand so ui/* inherits it */
+    --background: var(--paper);
+    --foreground: var(--ink);
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: var(--ink);
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --popover-foreground: var(--ink);
+    --primary: var(--brand);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--brand-tint);
+    --secondary-foreground: var(--brand);
+    --muted: var(--brand-tint);
+    --muted-foreground: 204 12% 46%;
+    --accent: var(--copper);
+    --accent-foreground: 0 0% 100%;
+    --destructive: 4 66% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border: var(--rule);
+    --input: var(--rule);
+    --ring: var(--brand-lift);
     --radius: 0.5rem;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
   }
 }
 
@@ -66,15 +46,144 @@ html {
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+    /* Clears the sticky header so in-page anchors don't land beneath it */
+    scroll-padding-top: 6rem;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-ink font-body antialiased;
+    font-optical-sizing: auto;
+  }
+
+  /* The mark is a wide geometric grotesque; headings answer it with tight tracking. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-brand;
+    font-variation-settings: 'wdth' 105;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
   }
 }
 
-/* Custom styles for Digital Presence page */
-.gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+@layer components {
+  /* Echoes the "— SOLUTIONS —" lockup: mono small caps between two short rules. */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 font-mono text-xs font-medium uppercase;
+    letter-spacing: 0.28em;
+  }
+
+  .eyebrow::before,
+  .eyebrow::after {
+    content: '';
+    width: 1.75rem;
+    height: 1px;
+    background-color: currentColor;
+    opacity: 0.5;
+    flex: none;
+  }
+
+  .eyebrow-start::before {
+    display: none;
+  }
+
+  /* Graph-paper atmosphere, fading out so it reads as texture rather than pattern. */
+  .surface-paper {
+    background-color: hsl(var(--paper));
+    background-image: radial-gradient(
+        115% 75% at 50% 0%,
+        transparent 0%,
+        hsl(var(--paper)) 72%
+      ),
+      linear-gradient(to right, hsl(var(--rule) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--rule) / 0.55) 1px, transparent 1px);
+    background-size: 100% 100%, 76px 76px, 76px 76px;
+  }
+
+  .surface-tint {
+    background-color: hsl(var(--brand-tint));
+    background-image: radial-gradient(
+        115% 75% at 50% 0%,
+        transparent 0%,
+        hsl(var(--brand-tint)) 72%
+      ),
+      linear-gradient(to right, hsl(var(--rule) / 0.7) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--rule) / 0.7) 1px, transparent 1px);
+    background-size: 100% 100%, 76px 76px, 76px 76px;
+  }
+
+  .surface-deep {
+    background-color: hsl(var(--brand-deep));
+    background-image: radial-gradient(
+        90% 60% at 15% 0%,
+        hsl(var(--brand-lift) / 0.65) 0%,
+        transparent 60%
+      ),
+      radial-gradient(70% 70% at 100% 100%, hsl(var(--copper) / 0.16) 0%, transparent 60%),
+      linear-gradient(to right, hsl(0 0% 100% / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 100% / 0.045) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 76px 76px, 76px 76px;
+  }
+
+  /* Data readouts: mono, tabular, so columns of figures align. */
+  .readout {
+    @apply font-mono tabular-nums;
+    font-feature-settings: 'tnum' 1;
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer utilities {
+  .animate-delay-1 {
+    animation-delay: 80ms;
+  }
+  .animate-delay-2 {
+    animation-delay: 160ms;
+  }
+  .animate-delay-3 {
+    animation-delay: 240ms;
+  }
+  .animate-delay-4 {
+    animation-delay: 320ms;
+  }
+  .animate-delay-5 {
+    animation-delay: 400ms;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sweep {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-rise,
+  .animate-sweep {
+    animation: none !important;
+  }
 }
