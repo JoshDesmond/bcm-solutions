@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import bcmLogo from '../../../assets/BCMSolutions.png?url';
+import bcmLogo from '../../../assets/BCMSolutionsHelixCrop.png?url';
 
 interface NavigationItem {
   name: string;
@@ -102,7 +102,7 @@ export const Header: React.FC = () => {
           <img 
             src={bcmLogo} 
             alt="BCM Solutions" 
-            className="h-12 w-auto"
+            className="h-24 w-auto"
           />
         </Link>
         
